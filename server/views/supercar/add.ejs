@@ -1,0 +1,69 @@
+
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Content for the Add page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="brandTextField">Supercar Title</label>
+                    <input type="text" class="form-control"
+                    id="brandTextField"
+                    placeholder="Enter the Brand Title"
+                    name="Brand" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ModelTextField">Model</label>
+                    <input type="text" class="form-control"
+                    id="ModelTextField"
+                    placeholder="Enter the Supercar's Model"
+                    name="Model" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="powerTextField">Power</label>
+                    <input type="text" class="form-control"
+                    id="powerTextField"
+                    placeholder="Enter the Supercar Engine Power"
+                    name="Power" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descriptionTextArea">Topspeed</label>
+                    <textarea type="text" class="form-control"
+                    id="topspeedTextArea"
+                    placeholder="Enter the Supercar Topspeed"
+                    name="Topspeed" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="priceTextField">Price</label>
+                    <input type="text" class="form-control"
+                    id="priceTextField"
+                    placeholder="Enter the Supercar's Price"
+                    name="Price" required>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/supercarslist" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>

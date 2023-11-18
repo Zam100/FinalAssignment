@@ -1,0 +1,86 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Content for the Add page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="brandTextField">Brand</label>
+                    <input type="text" class="form-control"
+                    id="brandTextField"
+                    placeholder="Enter the Supercar Title"
+                    name="Brand" 
+                    value="<%= Supercar.Brand %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="authorTextField">Model</label>
+                    <input type="text" class="form-control"
+                    id="modelTextField"
+                    placeholder="Enter the Supercar's Model"
+                    name="Brand" 
+                    value="<%= Supercar.Model %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="publishedTextField">Power</label>
+                    <input type="text" class="form-control"
+                    id="powerTextField"
+                    placeholder="Enter the Supercar's engine Power"
+                    name="Power" 
+                    value="<%= Supercar.Power %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="topspeedTextArea">Topspeed</label>
+                    <textarea type="text" class="form-control"
+                    id="topspeedTextArea"
+                    placeholder="Enter the a Top speed of the supercar"
+                    name="Topspeed" 
+                    required>
+                    <%= Supercar.Topspeed %>
+                    </textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="priceTextField">Price</label>
+                    <div class="input-group">
+                         <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" class="form-control"
+                            id="priceTextField"
+                            placeholder="Enter the Supercar's Price"
+                            name="Price" 
+                            value="<%= Supercar.Price %>"
+                            required>
+                        </div>
+                </div>
+
+                
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/supercarslist" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
