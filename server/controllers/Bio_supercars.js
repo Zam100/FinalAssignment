@@ -6,14 +6,14 @@ let Supercar = require('../models/Bio_supercars');
 module.exports.DislaySupercarlist = async (req,res,next)=>{ //< Mark function as async
     try{
        const SupercarList = await Supercar.find(); //< Use of await keyword
-       res.render('supercarslist', {
-          title: 'supercarslist', 
+       res.render('Supercar/list', {
+          title: 'Supercar List', 
           SupercarList: SupercarList
        });
     }catch(err){
        console.error(err);
        //Handle error
-       res.render('supercarslist', {
+       res.render('supercar/list', {
           error: 'Error on server'
        });
     }
@@ -29,7 +29,7 @@ module.exports.DislaySupercarlist = async (req,res,next)=>{ //< Mark function as
     catch(err)
     {
         console.error(err);
-        res.render('supercarslist',
+        res.render('Supercar/list',
         {
             error: 'Error on the server'
         });
@@ -52,7 +52,7 @@ module.exports.ProcessSupercar = async (req,res,next)=>{
     }
     catch(error){
         console.error(err);
-        res.render('supercarslist',
+        res.render('supercar/list',
         {
             error: 'Error on the server'
         });
@@ -63,7 +63,7 @@ module.exports.EditSupercar = async (req,res,next)=>{
     try{
     const id = req.params.id;
     const supercarToEdit = await Supercar.findById(id);
-    res.render('supercarsedit',
+    res.render('supercar/edit',
     {
         title:'Edit Supercar',
         Supercar:supercarToEdit
@@ -71,7 +71,7 @@ module.exports.EditSupercar = async (req,res,next)=>{
 }
 catch(error){
     console.error(err);
-    res.render('supercarslist',
+    res.render('supercar/list',
     {
         error: 'Error on the server'
     });
